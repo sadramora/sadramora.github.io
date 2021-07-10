@@ -56,6 +56,7 @@ body{
 }
 #header{
     background-color: #55aadd;
+    margin-top: 53px;
 }
 #search{
     float: right;
@@ -149,6 +150,7 @@ body{
     float: right;
     margin-top: 20px;
     border: 1px solid #ccc;
+    direction: rtl;
 }
 #sidebar h2{
     background-color: #47a;
@@ -160,6 +162,44 @@ body{
 }
 #cats{
     background-color: white;
+}
+span{
+    float: left;
+}
+.item , .subitem{
+    line-height: 200%;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    cursor: pointer;
+    /* border: 1px solid rgb(255, 255, 255) */
+}
+.item{
+    color: crimson;
+    /* width: 160px; */
+}
+.submenu{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: -1px;
+    right: 120%;
+    width: 160px;
+    /* border: 1px solid white; */
+    z-index: 1;
+}
+/* .submenu .submenu{
+    top: 0;
+    left: 160px;
+    border: 1px solid white;
+} */
+.item:hover > .submenu , .subitem:hover > .submenu{
+    visibility: visible;
+    opacity: 1;
+    right: 100%;
+    transition: 0.4s;
+}
+.item:hover , .subitem:hover{
+    background-color: rgb(231, 231, 231);
 }
 #cats li{
     padding: 4px 20px;
@@ -177,13 +217,13 @@ body{
     text-decoration: none;
     color: gray;
 }
-#cats a:hover{
-    color: rgb(26, 26, 26);
-}
-#cats a::before{
+/* #cats a:hover{
+    color: rgb(221, 221, 221);
+} */
+/* #cats a::before{
     content:'\2666';
     margin-left: 7px;
-}
+} */
 #content{
     float: right;
     margin-top: 20px;
@@ -205,6 +245,21 @@ body{
     margin: 11px;
     border-radius: 30px;
     overflow: hidden;
+    position: relative;
+}
+.post p{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 16px;    
+    text-align: justify;
+    position: absolute;
+    top: -150px;
+    padding: 10px;
+    height: 130px;
+    transition: 0.5s;
+}
+.post:hover p{
+    top: 0;
 }
 .post:hover{
     box-shadow: 0 0 5px -1px; 
